@@ -1,0 +1,22 @@
+<head>
+  <title>Mayles House</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet"
+        href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet"
+        href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+  <?php
+  id(\Packaged\Dispatch\AssetManager::assetType())->requireCss('css/base');
+  $sheets = (array)\Packaged\Dispatch\AssetManager::getUrisByType('css');
+  foreach($sheets as $css => $opt)
+  {
+    echo '<link rel="stylesheet" href="' . $css . '">';
+  }
+  ?>
+</head>
+<body>
+<div class="container" id="main-content">
+  <?php echo $this->content(); ?>
+</div>
